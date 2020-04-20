@@ -1,0 +1,529 @@
+/* -------------------- GLOBAL RULE -------------------- */
+
+:root {
+  --color-orange: #ff9e23;
+  --color-orange-shadow: #e57f00;
+  --color-orange-border: #ffdfb1;
+}
+
+.wrapper {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.df {
+  display: flex;
+}
+
+.w100p {
+  width: 100%;
+}
+
+/* -------------------- Login   -------------------- */
+
+.formConnect {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signInput {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-weight: bold;
+}
+
+.inputPassword {
+  width: 400px;
+  height: 35px;
+  padding-left: 10px;
+}
+
+.flexBtn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.signBtn {
+  color: white;
+  font-family: "Oswald", sans-serif;
+  border-radius: 10px;
+  background-color: #4183d7;
+  font-size: 20px;
+  height: 40px;
+  width: 100%;
+}
+
+.error {
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  padding-bottom: 16px;
+}
+
+.error-show {
+  color: red;
+}
+
+.error-hide {
+  color: white;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------- LoadingGif  -------------------- */
+.loadingBox {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.loadingRound {
+  height: 50px;
+  width: 50px;
+}
+
+/* -------------------- Nav   -------------------- */
+nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: rgb(66, 133, 244);
+  align-items: center;
+  justify-content: space-between;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+li {
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+
+li a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+li a:hover {
+  border-bottom: 2px solid #f0f0f0;
+}
+
+li svg {
+  cursor: pointer;
+}
+
+/* -------------------- Card   -------------------- */
+
+.card {
+  box-shadow: 0 4px 4px #e4e4e4;
+  border: 1px solid #b7b7b7;
+  border-radius: 5px;
+  margin: 10px;
+  width: 450px;
+}
+
+/* -------------------- cardsyndic   -------------------- */
+
+.adress {
+  width: 80%;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(238, 238, 238);
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.detail {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.actionList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgButton {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.linkDetail {
+  text-decoration: none;
+  color: black;
+}
+
+/* -------------------- barAddItem   -------------------- */
+.barAddItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: bold;
+  font-size: 22px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.btnAdd {
+  padding: 0px 30px 0px 30px;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  background-color: rgb(66, 133, 244);
+  font-size: 20px;
+  height: 40px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.rowInput {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  font-size: 16px;
+  color: #000;
+  height: 40px;
+  width: 500px;
+  justify-content: flex-start;
+}
+
+.rowGrey {
+  /* background-color: #d7dee2; */
+  background-color: rgb(249, 249, 249);
+}
+
+.labelInput {
+  font-size: 20px;
+  width: 120px;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
+.input {
+  font-size: 16px;
+  width: 320px;
+  padding-left: 5px;
+}
+
+.validBar {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.editContent {
+  border-radius: 5px;
+  margin-top: 30px;
+  box-shadow: 0 4px 0 #e4e4e4;
+  border: 1px solid #b7b7b7;
+}
+
+.editContent h2 {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.inputSelect {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f0f0f0;
+  width: 100%;
+}
+
+/* -------------------- TableInventory   -------------------- */
+.trLot {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.bodyLot {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 4px 0 #e4e4e4;
+  border: 1px solid #b7b7b7;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+.thLot {
+  font-weight: bold;
+  width: 80px;
+  text-align: center;
+}
+.tdLot {
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+  border: 0px;
+  font-size: 16px;
+}
+
+.tdSvg {
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bs {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.tdW50 {
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border: 0px;
+  font-size: 16px;
+}
+
+.tdLib {
+  width: 240px;
+  padding-left: 10px;
+  text-decoration: none;
+  border: 0px;
+  font-size: 16px;
+}
+
+.tdValue {
+  width: 240px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  border: 0px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.thW50 {
+  font-weight: bold;
+  width: 50px;
+  text-align: center;
+}
+.thLib {
+  font-weight: bold;
+  width: 240px;
+  padding-left: 10px;
+}
+
+.thSum {
+  font-weight: bold;
+  font-size: 20px;
+  width: 240px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.heightTotal {
+  height: 30px;
+  padding-top: 15px;
+}
+.tdOwner {
+  width: 200px;
+  padding-left: 10px;
+  text-decoration: none;
+  border: 0px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.thOwner {
+  font-weight: bold;
+  width: 200px;
+  padding-left: 10px;
+}
+
+.titleOwner {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+
+.inputSelect h2 {
+  text-align: left;
+  color: #9a9a9a;
+}
+
+.svgPointer {
+  cursor: pointer;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.csv-reader-input {
+  padding: 10px;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: grey;
+  background-color: rgb(249, 249, 249);
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  .wrapper {
+    margin: 0;
+  }
+
+  .inputPassword {
+    width: 300px;
+    border: 1px solid #b7b7b7;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    height: 50px;
+  }
+
+  .barAddItem {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .card {
+    margin: 10px;
+    width: 350px;
+  }
+
+  .rowInput {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 320px;
+    padding-right: 0;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: 50px;
+  }
+
+  .labelInput {
+    font-size: 20px;
+    width: 120px;
+    padding: 0px;
+    font-weight: bold;
+  }
+
+  .input {
+    font-size: 14px;
+    width: 280px;
+    padding: 5px;
+    border: 1px solid #b7b7b7;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .editContent {
+    width: 320px;
+    margin-top: 10px;
+  }
+
+  .editContent h2 {
+    padding-bottom: 10px;
+    margin: 10px;
+  }
+
+  .bodyLot {
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .titleContainer {
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .tdLot,
+  .thLot {
+    width: 72px;
+    padding: 0;
+  }
+
+  .thSum,
+  .tdOwner,
+  .thOwner,
+  .tdValue {
+    padding: 0;
+  }
+
+  .thSum,
+  .tdOwner,
+  .thOwner,
+  .tdValue,
+  .thSum,
+  .thLib {
+    font-size: 12px;
+  }
+
+  .barAddItem p {
+    margin: 10px;
+  }
+
+  .validBar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
