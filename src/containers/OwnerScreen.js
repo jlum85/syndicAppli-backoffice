@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import "../App.css";
@@ -11,35 +11,34 @@ import BarAddItem from "../components/BarAddItem";
 import {
   analyseHeader,
   getOwnerData,
-  tabColOwner
+  tabColOwner,
 } from "../Helpers/ImportData";
 
 const axios = require("axios");
 
-const OwnerScreen = props => {
+const OwnerScreen = (props) => {
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(true);
   const [owner, setOwner] = useState([]);
   const [token] = useState(props.token || "");
   const { id } = useParams(); // id de l'immeuble
-  const [refresh, setRefresh] = useState(true);
+  const isMountedRef = useRef(null);
 
-  const removeItem = ownerId => {
+  const removeItem = (ownerId) => {
     const fetchData = async () => {
       try {
         await axios.post(
           BASE_BACK_URI + "/owner/delete",
           { id: ownerId, property_id: id },
           {
-            headers: { Authorization: "Bearer " + props.token }
+            headers: { Authorization: "Bearer " + props.token },
           }
         );
         // on retire l'élément supprimé de card
-        const tab = owner.filter(value => {
+        const tab = owner.filter((value) => {
           return value.id !== id;
         });
         setOwner([...tab]);
-        setRefresh(true);
       } catch (err) {
         console.log(err.message);
         alert("An error occured");
@@ -57,10 +56,9 @@ const OwnerScreen = props => {
       try {
         ownerData.property_id = id;
         await axios.post(BASE_BACK_URI + "/owner", ownerData, {
-          headers: { Authorization: "Bearer " + props.token }
+          headers: { Authorization: "Bearer " + props.token },
         });
         setIsLoading(false);
-        setRefresh(true);
       } catch (err) {
         console.log(err.message);
         alert("An error occured");
@@ -73,7 +71,7 @@ const OwnerScreen = props => {
     }
   };
 
-  const handleDrag = data => {
+  const handleDrag = (data) => {
     if (data && data.length > 1) {
       // la 1ère ligne est la ligne d'entête qui permet de savoir où se trouve chaque info
       const colDef = analyseHeader(tabColOwner, data[0]);
@@ -83,7 +81,7 @@ const OwnerScreen = props => {
     }
   };
 
-  const editItem = item => {
+  const editItem = (item) => {
     props.setEditPage({ name: "owner", id: id, item: item });
     history.push("/edit");
   };
@@ -94,14 +92,16 @@ const OwnerScreen = props => {
   };
 
   useEffect(() => {
+    isMountedRef.current = true;
+
     const fetchData = async () => {
       try {
         const response = await axios.get(
           BASE_BACK_URI + "/owner/syndic?property_id=" + id,
           {
             headers: {
-              Authorization: "Bearer " + token
-            }
+              Authorization: "Bearer " + token,
+            },
           }
         );
         setOwner([...response.data.owner]);
@@ -110,13 +110,20 @@ const OwnerScreen = props => {
         alert("An error occured");
       } finally {
         setIsLoading(false);
-        setRefresh(false);
       }
     };
-    if (refresh && token && id) {
+
+    if (isMountedRef.current && token && id) {
+      //if (token && id) {
+      //console.log("isMountedRef : ", isMountedRef.current);
       fetchData();
     }
-  }, [refresh, token, id]);
+
+    return () => {
+      isMountedRef.current = false;
+      //console.log("unmount : ", isMountedRef.current);
+    };
+  }, [id, token]);
 
   const getItems = () => {
     if (props.showList) {

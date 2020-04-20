@@ -8,14 +8,14 @@ import logoSyndicAppli from "../assets/Logo1.png";
 
 const API = BASE_BACK_URI + "/user/loginadm";
 
-const Login = props => {
+const Login = (props) => {
   const history = useHistory();
-  const [mail, setMail] = useState("");
-  const [password, setPassword] = useState("");
+  const [mail, setMail] = useState("syndic2@privilege.com");
+  const [password, setPassword] = useState("syndic2@privilege.com");
   const [isError, setIsError] = useState(false);
   const [msgError, setMsgError] = useState("error");
 
-  const setError = msgError => {
+  const setError = (msgError) => {
     setMsgError(msgError);
     setIsError(true);
   };
@@ -63,7 +63,7 @@ const Login = props => {
     <section className="wrapper center">
       <form
         className="formConnect"
-        onSubmit={event => {
+        onSubmit={(event) => {
           event.preventDefault();
           getLogin();
         }}
@@ -78,7 +78,8 @@ const Login = props => {
             className="inputPassword"
             type="text"
             value={mail}
-            onChange={e => setMail(e.target.value)}
+            onChange={(e) => setMail(e.target.value)}
+            autoComplete="on"
           />
         </div>
 
@@ -88,7 +89,8 @@ const Login = props => {
             className="inputPassword"
             type="password"
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            autoComplete="on"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 

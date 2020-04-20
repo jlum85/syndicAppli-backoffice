@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import { useHistory } from "react-router-dom";
 
-const Header = props => {
+const Header = (props) => {
+  const history = useHistory();
+
   return (
     <nav>
       <ul className="headerLeft">
@@ -38,6 +41,7 @@ const Header = props => {
         <li
           onClick={() => {
             props.setToken(null);
+            history.push("/");
           }}
         >
           <svg
